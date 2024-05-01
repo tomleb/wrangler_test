@@ -18,10 +18,11 @@ func main() {
 					appsv1.DaemonSet{},
 					appsv1.StatefulSet{},
 				},
-				GenerateTypes:     true,
-				GenerateClients:   true,
-				GenerateInformers: true,
-				GenerateListers:   true,
+				// Known to not work before
+				// GenerateTypes: true,
+				// GenerateClients:   true,
+				// GenerateInformers: true,
+				// GenerateListers:   true,
 			},
 			"cluster.cattle.io": {
 				PackageName: "cluster.cattle.io",

@@ -18,7 +18,26 @@ limitations under the License.
 
 package cluster
 
-const (
-	// Package-wide consts from generator "zz_generated_register".
-	GroupName = "cluster.cattle.io"
+import (
+	"github.com/rancher/lasso/pkg/controller"
+	v3 "github.com/tomleb/wrangler_test/pkg/generated/controllers/cluster.cattle.io/v3"
 )
+
+type Interface interface {
+	V3() v3.Interface
+}
+
+type group struct {
+	controllerFactory controller.SharedControllerFactory
+}
+
+// New returns a new Interface.
+func New(controllerFactory controller.SharedControllerFactory) Interface {
+	return &group{
+		controllerFactory: controllerFactory,
+	}
+}
+
+func (g *group) V3() v3.Interface {
+	return v3.New(g.controllerFactory)
+}
