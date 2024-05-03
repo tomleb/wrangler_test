@@ -2,8 +2,6 @@ module github.com/tomleb/wrangler_test
 
 go 1.22.1
 
-replace github.com/rancher/wrangler/v3 => github.com/tomleb/rancher-wrangler/v3 v3.0.0-20240501202936-1f661814b596
-
 replace github.com/rancher/wrangler/v2 => github.com/tomleb/rancher-wrangler/v2 v2.2.0-rc1.0.20240501122407-54d673bf211a
 
 require (
